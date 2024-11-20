@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package dictGen;
+
+option go_package = "/dictGen";
+
+
+service DictServer {
+    rpc Add(AddRequest) returns (AddResponse);
+    rpc Check(CheckRequest) returns (CheckResponse);
+}
+
+message AddRequest {
+    string Key = 1;
+    string Value = 2;
+}
+
+message AddResponse {
+    string Result = 1;
+}
+
+message CheckRequest {
+    string Key = 1;
+}
+
+message CheckResponse {
+    string Value = 1;
+}
